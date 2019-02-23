@@ -1,23 +1,14 @@
-var letters = [];
-
-var rword = ""; // reverse word
-
-function isPalandrome(word) {
-	for (var i = 0; i < word.length; i++) {
-		//push letters of word into stack
-		letters.push(word[i]);
-	}
-
-	for(var i = 0; i < word.length; i++) {
-		//pop off the stack in reverse order
+function isPalindrome(word) {
+	word = word.toLowerCase()
+	var letters = word.split("");
+	var rword = "";
+	for (var i = 0; i < letters.length; i++) {
 		rword += letters.pop();
 	}
 
-	if(rword === word) {
-		console.log(`${word} is a palindrome!`);
-	} else {
-		console.log(`${word} is not a palindrome!`);
-	}
+
+	if (rword === word) return true;
+	else return false;
 }
 
 isPalandrome('racecar');
